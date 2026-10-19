@@ -201,11 +201,48 @@
     min-height: 1.2em;
   }
   .active-task-banner strong { color: var(--text); }
+  .help {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 18px;
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  .help summary {
+    cursor: pointer;
+    color: var(--text-dim);
+    font-weight: 600;
+  }
+  .help[open] summary { margin-bottom: 8px; }
+  .help ol, .help ul { padding-left: 1.4em; }
+  .help li + li { margin-top: 4px; }
+  .help-note {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+  }
 </style>
 </head>
 <body>
 <div class="app">
   <h1>🍅 ポモドーロ & タスク</h1>
+
+  <details class="help">
+    <summary>使い方</summary>
+    <ol>
+      <li>やることを入力して「追加」</li>
+      <li>タスク名をクリックすると「取り組み中」になります（もう一度クリックで解除）。作業が1回終わるたびに 🍅 が1つ増えます</li>
+      <li>「開始」で作業25分。音が鳴ったら休憩5分、4回ごとに15分の長い休憩です。次に進むときは、そのつど「開始」を押します</li>
+    </ol>
+    <div class="help-note">
+      <ul>
+        <li>データはこのブラウザの中だけに保存されます。ほかの端末やブラウザとは共有されず、閲覧データを消すと消えます</li>
+        <li>ページを開き直すと、タイマーは止まった状態になります</li>
+      </ul>
+    </div>
+  </details>
 
   <div class="timer-card" id="timerCard">
     <div class="mode-label work" id="modeLabel">作業中</div>
